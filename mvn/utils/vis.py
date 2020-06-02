@@ -400,7 +400,7 @@ def draw_3d_pose(keypoints, ax, keypoints_mask=None, kind='cmu', radius=None, ro
         ax.set_ylim([-radius + yroot, radius + yroot])
         ax.set_zlim([-radius + zroot, radius + zroot])
 
-    ax.set_aspect('equal')
+    #ax.set_aspect('equal')
 
 
     # Get rid of the panes
@@ -415,6 +415,21 @@ def draw_3d_pose(keypoints, ax, keypoints_mask=None, kind='cmu', radius=None, ro
     ax.set_yticklabels([])
     ax.set_zticklabels([])
 
+def draw_3d_pose_image(keypoints, keypoints_mask=None, kind='cmu', radius=None, root=None, point_size=2, line_width=2, draw_connections=True):
+    size = 5
+    fig = plt.figure(figsize=(1* size, 1 * size))
+    #fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    draw_3d_pose(keypoints, ax, keypoints_mask, kind, radius, root, point_size, line_width, draw_connections)
+
+    #fig.tight_layout()
+    #plt.show()
+
+    fig_image = fig_to_array(fig)
+
+    plt.close('all')
+
+    return fig_image
 
 def draw_voxels(voxels, ax, shape=(8, 8, 8), norm=True, alpha=0.1):
     # resize for visualization
