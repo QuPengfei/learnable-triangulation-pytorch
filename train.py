@@ -382,7 +382,7 @@ def init_distributed(args):
 
 def main(args):
     print("Number of available GPUs: {}".format(torch.cuda.device_count()))
-
+    torch.backends.cudnn.benchmark = False
     is_distributed = init_distributed(args)
     master = True
     if is_distributed and os.environ["RANK"]:
