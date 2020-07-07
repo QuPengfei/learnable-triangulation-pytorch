@@ -84,6 +84,17 @@ python3 train.py \
 ```
 Argument `--eval_dataset` can be `val` or `train`. Results can be seen in `logs` directory or in the tensorboard.
 
+## Demo and inference
+
+```
+this demo and inference script support:
+- demo 1: 4 views of video as input for each subject and action of H36M
+- demo 2: based on the H36m database, the inference can be done.
+```
+
+```
+python inference.py.
+```
 # Results
 * We conduct experiments on two available large multi-view datasets: Human3.6M [\[2\]](#references) and CMU Panoptic [\[3\]](#references).
 * The main metric is **MPJPE** (Mean Per Joint Position Error) which is L2 distance averaged over all joints.
