@@ -16,6 +16,17 @@ This project doesn't have any special or difficult-to-install dependencies. All 
 ```bash
 pip install -r requirements.txt
 ```
+## Demo and inference
+
+```
+this demo and inference script support:
+- demo 1: 4 views of video as input for each subject and action of H36M, support the output as the mp4 file.
+- demo 2: based on the H36m database, the inference can be done.
+```
+
+```
+python inference.py
+```
 
 ## Data
 *Note:* only [Human3.6M](http://vision.imar.ro/human3.6m/description.php) dataset training/evaluation is available right now. [CMU Panoptic](http://domedb.perception.cs.cmu.edu/) dataset will be added soon.
@@ -84,17 +95,6 @@ python3 train.py \
 ```
 Argument `--eval_dataset` can be `val` or `train`. Results can be seen in `logs` directory or in the tensorboard.
 
-## Demo and inference
-
-```
-this demo and inference script support:
-- demo 1: 4 views of video as input for each subject and action of H36M
-- demo 2: based on the H36m database, the inference can be done.
-```
-
-```
-python inference.py.
-```
 # Results
 * We conduct experiments on two available large multi-view datasets: Human3.6M [\[2\]](#references) and CMU Panoptic [\[3\]](#references).
 * The main metric is **MPJPE** (Mean Per Joint Position Error) which is L2 distance averaged over all joints.
